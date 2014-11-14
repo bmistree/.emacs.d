@@ -55,6 +55,7 @@
 (autoload 'js2-mode "js2" nil t)
 (autoload 'espresso-mode "espresso-mode" nil t)
 
+
 ; Set default mode for new buffers to text
 (setq default-major-mode 'text-mode)
 
@@ -89,9 +90,9 @@
 (autoload 'cycle-buffer-backward "cycle-buffer" "Cycle backward." t)
 
 (global-unset-key (kbd "C-u"))
-(global-set-key (kbd "C-u") 'comment-region)
-(global-unset-key (kbd "C-i"))
-(global-set-key (kbd "C-i") 'uncomment-region)
+(global-set-key (kbd "C-u") 'uncomment-region)
+(global-unset-key (kbd "C-m"))
+(global-set-key (kbd "C-m") 'comment-region)
 
 (global-unset-key (kbd "C-x C-n"))
 (global-set-key (kbd "C-x C-n") 'cycle-buffer)
