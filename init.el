@@ -89,23 +89,34 @@
 (autoload 'cycle-buffer "cycle-buffer" "Cycle forward." t)
 (autoload 'cycle-buffer-backward "cycle-buffer" "Cycle backward." t)
 
-(global-unset-key (kbd "C-u"))
-(global-set-key (kbd "C-u") 'uncomment-region)
-(global-unset-key (kbd "C-m"))
-(global-set-key (kbd "C-m") 'comment-region)
+;;Comment region
+(global-unset-key (kbd "C-x C-i"))
+(global-set-key (kbd "C-x C-i") 'comment-region)
+(global-unset-key (kbd "C-x C-u"))
+(global-set-key (kbd "C-x C-u") 'uncomment-region)
 
+;; Cycle buffers
 (global-unset-key (kbd "C-x C-n"))
 (global-set-key (kbd "C-x C-n") 'cycle-buffer)
 
 (global-unset-key (kbd "C-x C-m"))
 (global-set-key (kbd "C-x C-m") 'cycle-buffer-backward)
 
-(global-unset-key (kbd "C-/"))
-(global-set-key (kbd "C-/") 'backward-kill-word)
+;; Indentation
+(global-unset-key (kbd "C-x C-l"))
+(global-set-key (kbd "C-x C-l") 'shift-indent-right)
+
+(global-unset-key (kbd "C-x C-j"))
+(global-set-key (kbd "C-x C-j") 'shift-indent-left)
 
 ;; Change behavior of splitting windows to match tmux
 (global-set-key (kbd "C-x h") 'split-window-horizontally)
 (global-set-key (kbd "C-x v") 'split-window-vertically)
+
+;; Etc.
+(global-unset-key (kbd "C-u"))
+(global-set-key (kbd "C-u") 'backward-kill-word)
+
 
 
 (global-set-key [down-mouse-2] 'mouse-drag-drag)
@@ -398,8 +409,6 @@
 ; extra binds
 ;#####################################################################
 (global-set-key (kbd "M-o") 'header-flip)
-(global-set-key (kbd "C-<") 'shift-indent-left)
-(global-set-key (kbd "C->") 'shift-indent-right)
 (global-set-key (kbd "M-[ d") 'backward-word)
 (global-set-key (kbd "M-[ c") 'forward-word)
 (global-set-key (kbd "M-<f12>") 'eval-current-buffer)
