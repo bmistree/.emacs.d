@@ -263,7 +263,7 @@
 
 (defconst html-mode-hook
   '(lambda ()
-     (defconst fill-column 400) ; Every other time
+     (defconst fill-column 80) ; Every other time
      (auto-fill-mode 1)))
 
 
