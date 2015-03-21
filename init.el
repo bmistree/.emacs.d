@@ -462,12 +462,13 @@
       c-basic-offset 4)
 
 
-(add-hook 'go-mode-hook
-  (lambda ()
-    (setq-default)
-    (setq tab-width 4)
-    (setq standard-indent 2)
-    (setq indent-tabs-mode nil)))
+;; (add-hook 'go-mode-hook
+;;   (lambda ()
+;;     (setq-default)
+;;     (setq tab-width 4)
+;;     (setq standard-indent 2)
+;;     (setq indent-tabs-mode nil)))
+
 ; make it so that underscores are treated as delimiters (ie, ctrl-d on
 ; hello_this will leave hello)
 (add-hook 'go-mode-hook
