@@ -186,7 +186,7 @@
         '("\\.g\\'"      . bantlr-mode)
         '("\\.proto\\'"    . protobuf-mode)
         '("\\.go\\'"    . go-mode)
-        '("\\.m\\'"    . matlab-mode)        
+        '("\\.m\\'"    . matlab-mode)
         )
        auto-mode-alist))
 
@@ -307,7 +307,7 @@
 ;;iterator in c++  currently yellowish
 (set-face-foreground  'font-lock-type-face "#FFDC78")
 
-;;variable names in c++ 
+;;variable names in c++
 (set-face-foreground  'font-lock-variable-name-face "gray95")
 
 ;;brackets and -> in c++
@@ -473,3 +473,6 @@
 ; hello_this will leave hello)
 (add-hook 'go-mode-hook
           (lambda () (modify-syntax-entry ?_ "-")))
+
+;; Remove trailing whitespace from lines when save.
+(add-hook 'before-save-hook 'delete-trailing-whitespace)
