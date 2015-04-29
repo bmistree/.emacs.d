@@ -486,3 +486,9 @@
   (&rest args) (interactive)
   (delete-trailing-whitespace)
   (apply old-newline-and-indent args))
+
+;; When kill word (eg., using meta-d), will kill each hump of
+;; camel-case separately.  Ie., before this, if entered the word
+;; "toDelete", and then meta-d at beginning of line would get blank
+;; line.  With this change, will delete "to" and leave "Delete".
+(global-subword-mode t)
