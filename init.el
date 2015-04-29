@@ -474,5 +474,15 @@
 (add-hook 'go-mode-hook
           (lambda () (modify-syntax-entry ?_ "-")))
 
-;; Remove trailing whitespace from lines when save.
-(add-hook 'before-save-hook 'delete-trailing-whitespace)
+;; Goal: when use ctrl-j (newline-and-indent), remove trailing
+;; whitespace at end of line just returned from (or all lines in
+;; document).  (Previously, had added a save hook, which would remove
+;; all trailing whitespaces.  This was not good though because I
+;; frequently save after adding a whitespace, and I kept adding a
+;; space, saving, and removing the space I just added.)
+(defconst old-newline-and-indent
+  (symbol-function 'newline-and-indent))
+(defun newline-and-indent
+  (&rest args) (interactive)
+  (delete-trailing-whitespace)
+  (apply old-newline-and-indent args))
