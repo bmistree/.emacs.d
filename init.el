@@ -463,7 +463,6 @@ There are two things you can do about this warning:
 
 
 ;;;;;;;;;;;Beginning of experimentation;;;;;;;;;;;;;;;;;;;;
-;(require 'keylogger)
 
 ;;This way, don't have dumb formatting:
 ;; public void function (
