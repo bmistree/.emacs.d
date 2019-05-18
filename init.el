@@ -20,7 +20,7 @@
 (setq inhibit-splash-screen t)
 
 ; Use .emacs.d for .el files
-(add-to-list 'load-path "~/.emacs.d")
+(add-to-list 'load-path "~/.emacs.d/load-path/")
 
 
 ; Personality stuff
@@ -40,7 +40,7 @@
           (lambda () (c-add-style "my-style" my-protobuf-style t)))
 
 
-(setq load-path (cons (expand-file-name "~/.emacs.d/")
+(setq load-path (cons (expand-file-name "~/.emacs.d/load-path")
                       load-path))
 (autoload 'bantlr-mode "bantlr-mode" "to edit antlr files." t)
 (autoload 'bjs-mode "bjs-mode" "to edit antlr files." t)
@@ -138,8 +138,8 @@
   (hi-lock-mode 1))
 
 ; Make the modeline a little more inconspicuous...
-(set-face-background 'modeline "#202020")
-(set-face-foreground 'modeline "#C0C0C0")
+;; (set-face-background 'modeline "#202020")
+;; (set-face-foreground 'modeline "#C0C0C0")
 
 ; Make emacs stop bugging me about symlinks
 (setq vc-follow-symlinks t)
@@ -316,7 +316,7 @@
 ;;includes and #defines in c++
 (set-face-foreground  'font-lock-preprocessor-face "#FC0B0C")
 
-(set-face-background  'show-paren-match-face "SlateBlue3")
+;; (set-face-background  'show-paren-match-face "SlateBlue3")
 (set-face-background  'region "#502020")
 
 
