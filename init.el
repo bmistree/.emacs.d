@@ -158,16 +158,11 @@ There are two things you can do about this warning:
         (cursor-color     . "White")
         (foreground-color . "gray95")
 ))
-        ;; (background-color . "#212121")))
 
 ; Turn on highlighting with CTRL-X w h and CTRL-X w r
 (if (functionp 'global-hi-lock-mode)
     (global-hi-lock-mode 1)
   (hi-lock-mode 1))
-
-; Make the modeline a little more inconspicuous...
-;; (set-face-background 'modeline "#202020")
-;; (set-face-foreground 'modeline "#C0C0C0")
 
 ; Make emacs stop bugging me about symlinks
 (setq vc-follow-symlinks t)
