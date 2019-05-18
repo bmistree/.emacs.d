@@ -457,7 +457,8 @@ There are two things you can do about this warning:
 
 ;;bftm added named window
 (setq frame-title-format (concat  "%b - emacs@" system-name))
-(add-to-list 'default-frame-alist '(foreground-color . "green"))
+;; Update to set text color
+;; (add-to-list 'default-frame-alist '(foreground-color . "green"))
 
 
 
