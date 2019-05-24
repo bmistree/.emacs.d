@@ -110,8 +110,8 @@ There are two things you can do about this warning:
 (show-paren-mode t)
 
 ; Use the Command key for meta on Macs
-(defvar macosx-p (string-match "darwin" (symbol-name system-type))
-(if macosx-p (progn (setq mac-command-key-is-meta nil))))
+;; (defvar macosx-p (string-match "darwin" (symbol-name system-type))
+;; (if macosx-p (progn (setq mac-command-key-is-meta nil))))
 
 (autoload 'cycle-buffer "cycle-buffer" "Cycle forward." t)
 (autoload 'cycle-buffer-backward "cycle-buffer" "Cycle backward." t)
@@ -503,6 +503,8 @@ There are two things you can do about this warning:
   (&rest args) (interactive)
   (delete-trailing-whitespace)
   (apply old-newline-and-indent args))
+
+(global-set-key (kbd "C-j") 'newline-and-indent)
 
 ;; When kill word (eg., using meta-d), will kill each hump of
 ;; camel-case separately.  Ie., before this, if entered the word
